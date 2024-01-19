@@ -1,0 +1,331 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2023-12-26 12:07:44.905779",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "inspection_details",
+  "reason",
+  "comments",
+  "naming_series",
+  "report_date",
+  "status",
+  "main_reject_reason",
+  "column_break_4",
+  "inspection_type",
+  "barcode",
+  "bios_serial_number",
+  "reject_remarks",
+  "section_break_7",
+  "item_code",
+  "item_group",
+  "batch_no",
+  "column_break1",
+  "item_name",
+  "bom_no",
+  "specification_details",
+  "section_break_18",
+  "scan_barcode",
+  "nj_quality_readings",
+  "nj_quality_checks",
+  "section_break_14",
+  "inspected_by",
+  "verified_by",
+  "machine_made_by",
+  "machine_made_by_name",
+  "column_break_17",
+  "remarks",
+  "video_link",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "QI-.{inspection_type}.-.{barcode}.-.###",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Report Date",
+   "oldfieldname": "report_date",
+   "oldfieldtype": "Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "In-Progress",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "QI Status",
+   "options": "\nAccepted\nRejected\nIn-Progress",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "inspection_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Inspection Type",
+   "oldfieldname": "inspection_type",
+   "oldfieldtype": "Select",
+   "options": "Inspection Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Code",
+   "oldfieldname": "item_code",
+   "oldfieldtype": "Link",
+   "options": "Item",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "label": "Batch No",
+   "oldfieldname": "batch_no",
+   "oldfieldtype": "Link",
+   "options": "Batch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break",
+   "oldfieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bom_no",
+   "fieldtype": "Link",
+   "label": "BOM No",
+   "options": "BOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "specification_details",
+   "fieldtype": "Section Break",
+   "oldfieldtype": "Section Break",
+   "options": "Simple"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "user",
+   "fieldname": "inspected_by",
+   "fieldtype": "Link",
+   "label": "Inspected By",
+   "oldfieldname": "inspected_by",
+   "oldfieldtype": "Data",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Data",
+   "label": "Verified By",
+   "oldfieldname": "verified_by",
+   "oldfieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks",
+   "no_copy": 1,
+   "oldfieldname": "remarks",
+   "oldfieldtype": "Text"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "NJ Quality Inspection",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "NJ Quality Inspection",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "scan_barcode",
+   "fieldtype": "Data",
+   "label": "Scan Barcode",
+   "options": "Barcode"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "Item Group",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "nj_quality_readings",
+   "fieldtype": "Table",
+   "label": "Nj Quality Readings",
+   "options": "Nj Quality Readings"
+  },
+  {
+   "fieldname": "nj_quality_checks",
+   "fieldtype": "Table",
+   "label": "NJ Quality Checks",
+   "options": "NJ Checks"
+  },
+  {
+   "fieldname": "inspection_details",
+   "fieldtype": "Section Break",
+   "label": "Inspection Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Others",
+   "depends_on": "eval:doc.docstatus==1",
+   "fieldname": "reason",
+   "fieldtype": "Select",
+   "label": "Reason",
+   "mandatory_depends_on": "eval:doc.docstatus==1",
+   "options": "Others",
+   "translatable": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.docstatus==1",
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Comments",
+   "mandatory_depends_on": "eval:doc.reason=='Others' && doc.docstatus==1",
+   "translatable": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "machine_made_by.full_name",
+   "fieldname": "machine_made_by_name",
+   "fieldtype": "Data",
+   "label": "Machine Made By Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "barcode",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Barcode",
+   "no_copy": 1,
+   "translatable": 1
+  },
+  {
+   "depends_on": "eval: doc.status=='Rejected'",
+   "fieldname": "main_reject_reason",
+   "fieldtype": "Select",
+   "label": "Main Reject Reason",
+   "mandatory_depends_on": "eval: doc.status=='Rejected'",
+   "no_copy": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "machine_made_by",
+   "fieldtype": "Link",
+   "label": "Machine Made By",
+   "no_copy": 1,
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "depends_on": "main_reject_reason",
+   "fieldname": "reject_remarks",
+   "fieldtype": "Small Text",
+   "label": "Reject Remarks",
+   "no_copy": 1,
+   "translatable": 1
+  },
+  {
+   "fieldname": "video_link",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Video Link",
+   "translatable": 1
+  },
+  {
+   "fieldname": "bios_serial_number",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "BIOS Serial Number",
+   "no_copy": 1,
+   "translatable": 1
+  }
+ ],
+ "icon": "fa fa-search",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-19 16:16:34.817825",
+ "modified_by": "Administrator",
+ "module": "NJ-P1-Features",
+ "name": "NJ Quality Inspection",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "item_code, report_date",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "ASC"
+}
